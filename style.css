@@ -17,6 +17,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -411,19 +416,25 @@ body {
 }
 
 .project-image {
-    height: 220px;
+    width: 100%;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
+    position: relative;
+    background: #141418;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     transition: var(--transition);
+    display: block;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.1);
+.project-card:hover .project-image img,
+.project-card:active .project-image img {
+    transform: scale(1.05);
 }
 
 .project-info {
@@ -574,6 +585,64 @@ footer {
     
     .section {
         padding: 5rem 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .project-info {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .image-border {
+        width: 220px;
+        height: 220px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        border-radius: 18px;
+    }
+
+    .project-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-info {
+        padding: 1.25rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .tags span {
+        padding: 0.35rem 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
