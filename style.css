@@ -408,6 +408,8 @@ body {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -439,6 +441,9 @@ body {
 
 .project-info {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-info h3 {
@@ -452,10 +457,44 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.project-tech {
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem !important;
+}
+
+.project-bullets {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.project-bullets li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+.project-bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
+    margin-top: auto;
 }
 
 .tags span {
@@ -638,6 +677,10 @@ footer {
 
     .project-info h3 {
         font-size: 1.2rem;
+    }
+
+    .project-bullets li {
+        font-size: 0.84rem;
     }
 
     .tags span {
