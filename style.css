@@ -451,6 +451,29 @@ body {
     margin-bottom: 1rem;
 }
 
+.project-info h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.project-info h3 a:hover {
+    color: var(--accent-color);
+}
+
+.project-info h3 a i {
+    font-size: 0.9em;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.project-info h3 a:hover i {
+    transform: translate(2px, -2px);
+}
+
 .project-info p {
     color: var(--text-secondary);
     font-size: 0.95rem;
